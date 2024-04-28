@@ -1,0 +1,17 @@
+> added venv, git, django, and app
+> adding app to installed_apps
+> specify the use of custom user model in settings.py
+> add custom user model to app models
+> add two forms for user creation, one for admin and one for manual sign up
+> since default django admin is just a user, that too needs to be subclassed
+> add custom admin that derives from custom user to app admin.py
+> register both custom user and custom admin to admin
+> make migrations for app
+> run migrations
+> create a superuser admin,admin@admin.com 1
+
+- in admin panel:
+> click on users
+> you should see Email Address, Username, Age, Staff Status as fields.
+> these are list_display in admin.py
+> click on admin email, and edit your age (Optional)
