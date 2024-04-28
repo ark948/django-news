@@ -15,3 +15,24 @@
 > you should see Email Address, Username, Age, Staff Status as fields.
 > these are list_display in admin.py
 > click on admin email, and edit your age (Optional)
+
+> create a project level templates directory
+> and within it the registration folder
+> specify the location of new templates directory in settings.py
+> login and logout redirect urls to settings.py
+> add new templates: base and home to templates folder
+> and login and sign up to registration folder
+> add urls to project level urls.py:
+    > first, url for home
+    > for login and logout, django's auth provides views and urls for both
+    > but for sign up, we will create our own view and url.
+> add urls.py file to accounts app.
+> add url routes to accounts urls.py
+> add signup view to accounts views.py
+- note: this book uses django version 4. in django version 5, logout can no longer be GET
+and must be POST
+- note: when making custom forms, if we want a field to actually show up,
+it must be explicitly added. otherwise it will not show up,
+even if it exists in associated model.
+
+> add 'age' field to both custom forms
