@@ -41,3 +41,8 @@ even if it exists in associated model.
 > add pages app to settings.py installed apps
 > this app will hold the main pages that will not change such as homepage and about us
 > remove the previous homepage from django urls.py and replace it with pages urls.py
+> add tests
+- You can never have enough tests.
+- for every feature, tests must be written
+> add tests to pages (and accounts before that)
+> python manage.py test
