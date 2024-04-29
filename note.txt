@@ -46,3 +46,6 @@ even if it exists in associated model.
 - for every feature, tests must be written
 > add tests to pages (and accounts before that)
 > python manage.py test
+
+> starting to add static files for serving local and compiled bootstrap
+> refer to note_static.txt

@@ -1,0 +1,30 @@
+NOTE: Everything here in this note, is experimental and  may or may not work.
+> create a top level static folder.
+> add STATICFILES_DIRS = [BASE_DIR / "static"] to settings.py file.
+- this should be right below STATIC_URL.
+> add {% load static %} to base.html, before html tag.
+> trying to add bootstrap compiled files now. (contains a css and a js folder)
+> testing one small element to see if it worked.
+- according to bootstrap section of this book, three things must be added.
+1. meta name="viewport" at the top within <head>
+2. bootstrap css link within <head>
+3. bootstrap javascript bundle at the bottom of the <body>
+(there is high possibility that this will not work)
+> test to see if works. (WORKS VERY FINE, fonts have updated)
+- (according to book, static files should be compiled for production and deployment)
+> add STATIC_ROOT = BASE_DIR / "staticfiles" to settings.py
+> add STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage" to settings.py
+- the first one is probably the location for compiled static files
+- the second one is the engine to use for compiling and serving static files
+- (according to book, it is a file storage engine)
+> run python manage.py collectstatic
+> test if it still works. (works fine)
+- (according to book, there are mutliple ways to serve static files)
+- (one very common approach is the WhiteNoise package)
+> pip install whitenoise
+> add whitenoise configs (3 configs) to settings.py
+1. add whitenoise to installed_apps above staticfiles app
+2. under MIDDLEWARE add a new line for WhiteNoiseMiddleware
+3. change STATICFILES_STORAGE to use WhiteNoise
+> run python manage.py collectstatic
+> it will ask for confrimation of overwriting, select yes
