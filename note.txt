@@ -36,3 +36,8 @@ it must be explicitly added. otherwise it will not show up,
 even if it exists in associated model.
 
 > add 'age' field to both custom forms
+
+> add pages app
+> add pages app to settings.py installed apps
+> this app will hold the main pages that will not change such as homepage and about us
+> remove the previous homepage from django urls.py and replace it with pages urls.py
