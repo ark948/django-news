@@ -49,3 +49,29 @@ even if it exists in associated model.
 
 > starting to add static files for serving local and compiled bootstrap
 > refer to note_static.txt
+> coming back from note_static.txt
+
+> one problem: the nav bar loads in home page, but not in other pages, such as login and logout pages
+> fixed the problem by adding a backslash at the beginning of bootstrap css link in base.html
+> now, I'm not sure if bootstrap.min.js is loaded.
+> I think it is loaded. some js files appear in browser console.
+> two new packages to install, django-crispy-forms, bootstrap5 template pack
+> pip install django-crispy-forms==1.13.0
+> pip install crispy-bootstrap5==0.6
+- (the versions in book are quite old)
+> add the new apps to INSTALLED_APPS
+> add new config vars for new apps to settings.py file
+- CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+- CRISPY_TEMPLATE_PACK = "bootstrap5"
+> edit signup.html to use crispy forms
+> now check out sign up page to see the changes
+
+> to implement password change and password reset:
+- (they both exist in django built in, we just need to customize templates)
+> add password_change_form.html and passworc_change_done.html to registration templates folder
+- for builtin password reset, all we have to tell django, is how to send email.
+- in production we can use SendGrid.
+- for development we can just print them to console.
+> add a config var to bottom of settings.py
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+> to customize password_reset process, add 4 new templates
