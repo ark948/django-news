@@ -75,3 +75,28 @@ even if it exists in associated model.
 > add a config var to bottom of settings.py
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 > to customize password_reset process, add 4 new templates
+
+- SendGrid (requires phone number and sms verification)
+- i don't know how safe that is.
+- skipping password reset for now.
+
+- Starting to create articles app
+(when naming an app, we can't use the name of built-in django apps)
+- such as admin, auth, contenttypes, sessions, messages, staticfiles
+- a common rule is to use plural words for our app names. (except when it makes no sense like blog, instead of blogs)
+> python manage.py startapp articles
+> add to installed_apps
+> update timezone (since blog posts will have timestamps)
+- note: there are two general ways to refer to our custom user model:
+- AUTH_USER_MODEL -> should be used in models.py files
+- get_user_model -> should be used anywhere else such as views, tests and ...
+> make and apply migrations
+> python manage.py makemigrations articles
+> python manage.py migrate
+> update articles/admin.py and register model
+- went to admin panel and added 3 articles, author of all of them is admin
+> add articles urls to project level urls.py
+> add views for editing,deleting,detai,and create articles
+> add urls for all mentioned above
+> add tempaltes for all mentioned above
+> add link for new articles to base, for logged in users

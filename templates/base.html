@@ -16,7 +16,7 @@
                 <a class="navbar-brand" href="{% url 'home' %}">Newspaper</a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     {% if user.is_authenticated %}
-                    <li><a class="nav-link px-2 link-dark" href="#">+ New</a></li>
+                    <li><a class="nav-link px-2 link-dark" href="{% url 'article_new' %}">+ New</a></li>
                 </ul>
                 <div class="dropdown text-end">
                     <a aria-expanded="false" class="d-block link-dark text-decoration-none dropdown-toggle"
