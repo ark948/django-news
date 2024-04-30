@@ -100,3 +100,22 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 > add urls for all mentioned above
 > add tempaltes for all mentioned above
 > add link for new articles to base, for logged in users
+
+- Current version of newspaper app has a huge problem.
+- Any user can create/edit/delete any article.
+
+> to fix that, first createview should be edited.
+> remove 'author' from fields in createview and add form_valid method
+
+- another issue is that, even logged-out users can still create articles
+- if they just type in the url (although the form will not be valid)
+> for that we will add mixins to views.py
+- NOTE: LoginRequiredMixin must come before CreateView inheritance
+> check it out
+> add LoginRequiredMixin to all article views
+
+- Another problem is that a logged in user can edit other articles if they know their url
+- only the author must be able to edit their own article.
+> for that we will use UserPassesTestMixin. This should go after LoginRequiredMixin
+- NOTE: when using mixins with class-based views, the order is very important.
+- check out new features.
