@@ -119,3 +119,21 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 > for that we will use UserPassesTestMixin. This should go after LoginRequiredMixin
 - NOTE: when using mixins with class-based views, the order is very important.
 - check out new features.
+- override the test_func method for classes with UserPassesTestMixin mixin
+
+- make it work -> then make it performant -> then make it understandable
+
+- to add comments:
+> add comment model to articles models.py file.
+> make migrations for only articles app.
+- (this way, the migration script will be generated for articles app separately)
+- (makes it easier to debug/edit migration files later, if there are are multiple apps with migrations)
+> python manage.py makemigrations articles
+> python managhe.py migrate
+> add it to admin
+> edit admin.py so that comments can be displayed for each article
+- now, add comments to templates, (in list and detail)
+> add comments to article_list
+> add comments to article_detail
+> check out
+> (also) i added the link to detail page of every article myself (don't know if book forgot to add it)
