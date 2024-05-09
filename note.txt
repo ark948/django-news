@@ -137,3 +137,14 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 > add comments to article_detail
 > check out
 > (also) i added the link to detail page of every article myself (don't know if book forgot to add it)
+
+- working with environment variables
+- we will use the package 'environs' to manage our project's environment variables
+> pip intall environs
+> add the following to settings.py:
+    from pathlib import Path
+    from environs import Env
+    env = Env()
+    env.read_env()
+> add .env file to root project directory
+> add .env file to gitignore
