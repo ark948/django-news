@@ -138,6 +138,7 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 > check out
 > (also) i added the link to detail page of every article myself (don't know if book forgot to add it)
 
+- Deployment
 - working with environment variables
 - we will use the package 'environs' to manage our project's environment variables
 > pip intall environs
@@ -148,3 +149,22 @@ EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     env.read_env()
 > add .env file to root project directory
 > add .env file to gitignore
+> turn off debug mode in settings.py:
+    DEBUG = False
+> after turning off debug, allowed_hosts must be set:
+> add local host to allowed_hosts var in settings.py
+> add DEBUG=True to .env file
+- our goal is for debug to be true for development and false in production.
+> in settings.py edit the debug var to read from env file.
+- also we need to add a default settings. if an environment var could not be found, it would default to that.
+- it is best to default to production settings. because it is more secure.
+> edit secret_key in settings.py to point to secret_key var in .env file
+> generate a secure random string using python's secrets module
+> python -c "import secrets; print(secrets.token_urlsafe())"
+> copy and paste it into .env file
+- to add database_url (environs package contains a package called dj-database-url, this package will parse the database_url)
+> settings.py:
+    DATABASES = {
+        "default": env.dj_db_url("DATABASE_URL")
+    }
+> add database url to env file:
